@@ -432,13 +432,13 @@ export default class JiraApi {
    * @param {string} sprintId - the id of the sprint to add it to
    */
   addIssueToSprint(issueId, sprintId) {
-    return this.doRequest(this.makeRequestHeader(this.makeUri({
-      pathname: `/sprint/${sprintId}/issues/add`,
+    return this.doRequest(this.makeRequestHeader(this.makeAgileUri({
+      pathname: `/sprint/${sprintId}/issue`,
     }), {
-      method: 'PUT',
+      method: 'POST',
       followAllRedirects: true,
       body: {
-        issueKeys: [issueId],
+        issues: [issueId],
       },
     }));
   }
