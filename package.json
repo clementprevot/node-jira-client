@@ -36,7 +36,8 @@
     "lint": "eslint ./",
     "test": "npm run lint && mocha && npm run docs-build",
     "prepublishOnly": "npm run build && npm run docs-build",
-    "release": "release"
+    "release": "release",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
